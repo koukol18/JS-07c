@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Javascript 07b a 07c - Události klávesnice a formuláře</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+</head>
+<body>
+  <div class="container pt-3">
+    <section class="mb-3">
+      <h1 class="mb-3">Javascript 07b a 07c - Události klávesnice a formuláře</h1>
+      <p class="alert alert-primary">
+        Vítejte ve cvičení k Document Object Modelu, v tomto cvičení v konzoli nic nenajdete...
+        Všechno potřebné bude v HTML.<br>POZOR! - HTML však nemůžete nijak měnit, všechny úkoly musí být splněny
+        pomocí Javascriptu.
+      </p>
+    </section>
+    <section class="mb-3">
+      <h2>Cenzurovaná klávesnice</h2>
+      <p>
+        Mezi roky 1928 a 2013, bylo zakázáno používat v tureckých oficiálních dokumentech písmena
+        Q, W a X. To bylo namířeno proti kurdům, protože jejich abeceda tyto písmena používá, zatímco
+        turecká nikoliv. Pojďme si vyzkoušet, jak bychom toho docílili pomocí javascriptu.
+      </p>
+      <p>
+        V textové oblast níže ošetřete vstupy tak, aby se místo písmen Q, W nebo X, objevila hláška,
+        která informuje o zákazu těchto písmen, a neumožní je zapsat do textové oblasti.
+      </p>
+      <p class="font-italic">
+        Nápověda: Potřebuje zakázat standartní chování textové oblasti v případě, že se jedná 
+        o určitá písmena. Jak se zakáže normální chování?
+      </p>
+      <div class="cenzura p-3">
+        <h2>Bylo nebylo, příběh o cenzuře</h2>
+        <textarea name="text" rows="10" class="form-control"></textarea>
+      </div>
+
+    </section>
+    <section class="mb-3">
+      <h2>TOP SECRET!</h2>
+      <p>
+       Pokud jste šikovní programátoři, nebude pro vás problém vymyslet tajný signál, který například
+       odhalí tajemství na webové stránce. Pro naše potřeby tento signál bude konkrétní sekvence
+       zmáčknutých kláves. 
+      </p>        
+      <p>
+        Napište skript, který odposlouchává stisknuté klávesy, a pokud někdo stiskne klávesy v následujícím
+        pořadí - tunak, změní se pozadí celé stránky na obrázek níže (případně obrázek dle výběru).
+      </p>
+      <p>
+        Obrázek na pozadí: https://images.unsplash.com/photo-1516741539888-96b4c96adf0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9
+      </p>
+      <p class="font-italic">
+        Nápověda: Toto není úplně jednoduché, doporučuji nejdříve zkusit to pro stisknutí 1 tlačítka.
+        Potom můžete pokračovat se složitější částí, při stisknutí libovolné klávesy musíte
+        hlídat jestli je sekvence dodržena a v pravidelných intervalech mazat sekvenci, abyste mohli začít znova.
+      </p>
+    </section>
+
+    <section class="mb-3">
+      <h2>Změna je život</h2>
+      <p>
+        Mezi nadpisem zmenaNadpis a zmenaInput existuje jednoduchý vztah,
+        jakmile skončí úprava textu v textovém poli, změní se obsah nadpisu dle formuláře.
+        Změna není v reálném čase, provede přesně, když dokončíte upravu pole.
+      </p>
+      <div class="zmena border p-3">
+          <h2 class="zmenaNadpis">Tento text se mění</h2>
+          <form name="zmenaFormular">
+            <input type="text" class="form-control" name="zmenaInput" value="Tento text se mění">
+          </form>
+      </div>
+    </section> 
+    <section class="mb-3">
+      <h2>Elektronické předplatné</h2>
+      <p>
+        Rozhodli jste se objednat si předplatné týdeníku Moderní Webdesign, vyplnili jste všechno
+        potřebná a zbývá jen vybrat jaké předplatné chcete, každé má totiž jinou cenu, v závislosti
+        na rozsahu a délce předplatného (viz tabulka).
+      </p>
+      <table class="table">
+        <tr>
+          <th>Předplatné</th>
+          <th>1 měsíc</th>
+          <th>6 měsíců</th>
+          <th>12 měsíců</th>
+        </tr>
+        <tr>
+          <td>
+            Základní předplatné
+          </td>
+          <td>
+            500 Kč
+          </td>
+          <td>
+            2 500 Kč
+          </td>
+          <td>
+            5 000 Kč
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Firemní předplatné
+          </td>
+          <td>
+            700 Kč
+          </td>
+          <td>
+            3 500 Kč
+          </td>
+          <td>
+            7 000 Kč
+          </td>
+        </tr>
+        <tr>
+          <td>
+            DELUXE předplatné
+          </td>
+          <td>
+            1000 Kč
+          </td>
+          <td>
+            5 000 Kč
+          </td>
+          <td>
+            10 000 Kč
+          </td>
+        </tr>
+        
+      </table>
+      <p>
+        Napište skript, který vypočítá správnou cenu pokaždé když se změní libovolná hodnota
+        - typ předplatného nebo délka. Nezapomeňte na výpočet na začátku po načtení stránky.
+      </p>
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="mb-3">Předplatné Moderního Webdesignu</h3>
+
+         <form name="predplatne">
+           <select name="typ" class="form-control mb-3">
+             <option value="1">Základní předplatné</option>
+             <option value="2">Firemní předplatné</option>
+             <option value="3">DELUXE předplatné</option>
+           </select>
+           <select name="delka" class="form-control mb-3">
+             <option value="1">1 měsíc</option>
+             <option value="6">6 měsíců</option>
+             <option value="12">12 měsíců</option>
+           </select>
+         </form>
+
+         <h3 class="text-danger">Cena za předplatné: <span class="cena">0 Kč</span></h3>
+        </div>
+      </div>
+    </section>
+    <section class="mb-3">
+      <h2>Editovatelný TODO list</h2>
+      <p>
+        Většina seznamů úkolů jde editovat i po tom, co úkol zadáme. Pojďme si tuto funkčnost
+        simulovat. Váš úkol je jednoduchý, při dvojkliknutí na některý úkol, budete mít možnost
+        ho editovat - tj. objeví se vám input, který když vyplníte a "odejdete" z něj,
+        tak změní to co je v úkolu napsáno.
+      </p>
+      <p>
+        Poradím vám i dvě cesty, i když možností je samozřejmě více, pokud jste šikovnější,
+        zkuste to takto a) Při události přidejte do položky seznamu nový tag input,
+        na ten navěste událost, která čeká na ukončení zadávání a pak změní hodnotu
+        ve spanu a odebere input. b) Upravte si HTML strukturu, vedle spanu přidejte 
+        do každé položky input, a přidejte css třídu edit, kterou přidejte na rodiče obou tagů,
+        v případě, že editujete je zobrazený pouze input, po dokončení změn se změní třída
+        a je viditelný pouze text ve spanu.
+      </p>
+      <h3 class="my-3">Editovatelný TODO list</h3>
+      <div class="todo">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <span class="content">Naučit se Javascript</span>
+          </li>
+          <li class="list-group-item">
+            <span class="content">Zajít ke kadeřníkovi</span>
+          </li>
+          <li class="list-group-item">
+            <span class="content">Překonat strach z učení</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>
